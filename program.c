@@ -17,6 +17,7 @@ void f2(){
 
 void f3(){
     int c = 30;
+    A = 9,B = 8,C = 7;
     printf("&c @ f3() = %p\n",&c);
     printf("&A = %p, &B = %p, &C = %p <--- print in function\n",&A,&B,&C);
 }
@@ -25,13 +26,14 @@ int main(){
     int *X = malloc(sizeof (int));
     int *Y = malloc(sizeof (int));
     int *Z = malloc(sizeof (int));
-    *X = 100;
-    *Y = 200;
-    *Z = 300;
-    printf("Results of int * addresses: \n");
+    int *W = malloc(sizeof (int));
+    int *V = malloc(sizeof (int));
+    printf("Results of addresses: \n");
     printf("&A = %p, &B = %p, &C = %p <--- print in main\n",&A,&B,&C);
-    printf("X = %p, Y = %p, Z = %p\n",X,Y,Z);
+    printf("X = %p, Y = %p, Z = %p, W = %p, V = %p\n",X,Y,Z,W,V);
     f1();
+    free(V);
+    free(W);
     free(Z);
     free(Y);
     free(X);
