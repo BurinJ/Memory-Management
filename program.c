@@ -32,8 +32,8 @@ int main(){
     printf("&A = %p, &B = %p, &C = %p <--- print in main\n",&A,&B,&C);
     printf("X = %p, Y = %p, Z = %p\n",X,Y,Z);
     f1();
-    free(X);
-    free(Y);
     free(Z);
+    free(Y);
+    free(X);
     return 0;
 }
